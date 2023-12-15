@@ -1,0 +1,21 @@
+Connect the Camera Module :
+1) Switch off the Raspberry Pi
+2) Locate the Camera port, Connect the Camera Module.
+3)Start up the Camera Pi
+4)Open the Raspberry Pi Configuration tool from the main menu.
+5)On the terminal , $sudo raspi-config.
+6)Enable the camera by going to the Interfacing option .
+
+
+
+
+(sorce code)
+
+from time import sleep
+from picamera import PiCamera
+camera = Picamera()
+camera.resolution = (1280,720)
+camera.start_preview()
+sleep(10)
+camera.capture(“/home/pi/Pictures/newImage.jpg”)
+camera.stop_preview()
